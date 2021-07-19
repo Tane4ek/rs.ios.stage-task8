@@ -9,6 +9,8 @@
 #import "SubView.h"
 #import "DrawingsViewController.h"
 
+//проверка
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigatonBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *drawingsButton;
