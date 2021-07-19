@@ -9,8 +9,6 @@
 #import "SubView.h"
 #import "DrawingsViewController.h"
 
-//проверка
-
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigatonBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *drawingsButton;
@@ -22,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *openTimer;
 @property (weak, nonatomic) IBOutlet UIButton *draw;
 @property (weak, nonatomic) IBOutlet UIButton *share;
+@property (weak, nonatomic) IBOutlet UIButton *reset;
 
 @property (nonatomic, strong) SubView *paletteView;
 @property (nonatomic, strong) SubView *timerView;
@@ -113,14 +112,22 @@
     self.share.alpha = 0.5;
     self.share.enabled = NO;
     
+    [self.reset setTitle:@"Reset" forState:UIControlStateNormal];
+    self.reset.layer.cornerRadius = 10;
+    self.reset.layer.backgroundColor = UIColor.whiteColor.CGColor;
+    self.reset.layer.shadowColor = UIColor.blackColor.CGColor;
+    self.reset.layer.shadowRadius = 2;
+    self.reset.layer.shadowOffset = CGSizeMake(0, 0);
+    self.reset.layer.shadowOpacity = 0.25;
+    
 //    setupPaletteColors
     self.selectedColors = [[NSMutableArray alloc] init];
     
-    self.paletteView = [[SubView alloc] initWithFrame:CGRectMake(0, 333, 375, 334) andColor:[UIColor whiteColor]];
+    self.paletteView = [[SubView alloc] initWithFrame:CGRectMake(0, 333, 375, 380) andColor:[UIColor whiteColor]];
     [self.view addSubview:self.paletteView];
     self.paletteView.hidden = YES;
-    [self setMaskTo:self.paletteView byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight];
     self.paletteView.layer.backgroundColor = UIColor.whiteColor.CGColor;
+    self.paletteView.layer.cornerRadius = 40;
     self.paletteView.layer.shadowColor = UIColor.blackColor.CGColor;
     self.paletteView.layer.shadowRadius = 8;
     self.paletteView.layer.shadowOffset = CGSizeMake(0, 0);
@@ -162,15 +169,15 @@
                               forControlEvents:UIControlEventTouchUpInside];
     
 //    setupTimerView
-    self.timerView = [[SubView alloc] initWithFrame:CGRectMake(0, 333, 375, 334) andColor:[UIColor whiteColor]];
+    self.timerView = [[SubView alloc] initWithFrame:CGRectMake(0, 333, 375, 380) andColor:[UIColor whiteColor]];
     [self.view addSubview:self.timerView];
     self.timerView.hidden = YES;
-    [self setMaskTo:self.timerView byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight];
     self.timerView.layer.backgroundColor = UIColor.whiteColor.CGColor;
-    self.timerView.layer.mask.shadowColor = UIColor.blackColor.CGColor;
-    self.timerView.layer.mask.shadowRadius = 8;
-    self.timerView.layer.mask.shadowOffset = CGSizeMake(0, 0);
-    self.timerView.layer.mask.shadowOpacity = 0.25;
+    self.timerView.layer.cornerRadius = 40;
+    self.timerView.layer.shadowColor = UIColor.blackColor.CGColor;
+    self.timerView.layer.shadowRadius = 8;
+    self.timerView.layer.shadowOffset = CGSizeMake(0, 0);
+    self.timerView.layer.shadowOpacity = 0.25;
     
 //  adding SaveTimerButton
     UIButton *saveTimerButton = [[UIButton alloc] initWithFrame:CGRectMake(250, 20, 85, 32)];
@@ -214,6 +221,25 @@
                                   action:@selector(openTimerTapped:)
                                   forControlEvents:UIControlEventTouchUpInside];
     
+//          resetButton action
+    [self.reset addTarget:self
+                              action:@selector(resetTapped:)
+                              forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+-(void)resetTapped: (UIButton *)sender {
+    self.image.layer.sublayers = nil;
+    
+    self.draw.hidden = NO;
+    self.reset.hidden = YES;
+    
+    self.openPalette.enabled = YES;
+    self.openPalette.alpha = 1;
+    self.openTimer.enabled = YES;
+    self.openTimer.alpha = 1;
+    self.share.enabled = NO;
+    self.share.alpha = 0.5;
 }
 
 - (void)addColorButton:(CGRect)rect color:(UIColor *)color {
@@ -268,6 +294,14 @@
         [self landScape3];
     }
     
+    self.draw.hidden = YES;
+    self.reset.hidden = NO;
+    self.openPalette.enabled = NO;
+    self.openPalette.alpha = 0.5;
+    self.openTimer.enabled = NO;
+    self.openTimer.alpha = 0.5;
+    self.share.enabled = YES;
+    self.share.alpha = 1;
     
 }
 
@@ -1343,15 +1377,15 @@
     self.paletteView.hidden = YES;
 }
 
-- (void)setMaskTo:(UIView*)view byRoundingCorners:(UIRectCorner)corners
-{
-    UIBezierPath *rounded = [UIBezierPath bezierPathWithRoundedRect:view.bounds
-                                                  byRoundingCorners:corners
-                                                        cornerRadii:CGSizeMake(40.0, 40.0)];
-    CAShapeLayer *shape = [[CAShapeLayer alloc] init];
-    [shape setPath:rounded.CGPath];
-    view.layer.mask = shape;
-}
+//- (void)setMaskTo:(UIView*)view byRoundingCorners:(UIRectCorner)corners
+//{
+//    UIBezierPath *rounded = [UIBezierPath bezierPathWithRoundedRect:view.bounds
+//                                                  byRoundingCorners:corners
+//                                                        cornerRadii:CGSizeMake(40.0, 40.0)];
+//    CAShapeLayer *shape = [[CAShapeLayer alloc] init];
+//    [shape setPath:rounded.CGPath];
+//    view.layer.mask = shape;
+//}
 
 -(void)openTimerTapped: (UIButton *)sender {
     self.timerView.hidden = NO;
@@ -1395,8 +1429,5 @@
     
 
 }
-
-
-
 
 @end

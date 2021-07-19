@@ -76,14 +76,28 @@
                                     <constraint firstAttribute="width" constant="300" id="nfT-Ru-EZJ"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wW-EN-tqb">
+                                <rect key="frame" x="243" y="451" width="91" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="3jZ-1L-mP7"/>
+                                    <constraint firstAttribute="width" constant="91" id="xje-gS-xAP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.69019607839999997" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wts-fj-lR7" secondAttribute="bottom" constant="131" id="8Kz-xk-7GT"/>
+                            <constraint firstItem="Wts-fj-lR7" firstAttribute="top" secondItem="1wW-EN-tqb" secondAttribute="bottom" constant="20" id="CXl-qG-I2L"/>
+                            <constraint firstItem="1wW-EN-tqb" firstAttribute="top" secondItem="7hs-6x-Nzv" secondAttribute="top" id="IsO-Cr-fVU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GHq-K9-iaM" secondAttribute="bottom" constant="131" id="Rkd-cj-oa8"/>
                             <constraint firstItem="cJC-tR-Frg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Yop-8s-enV"/>
                             <constraint firstItem="Wts-fj-lR7" firstAttribute="top" secondItem="GHq-K9-iaM" secondAttribute="top" id="bUc-RG-TrL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1wW-EN-tqb" secondAttribute="trailing" constant="41" id="eXv-Qk-aaC"/>
                             <constraint firstItem="QqB-Bo-xA4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hRd-G3-YeA"/>
                             <constraint firstItem="cJC-tR-Frg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="heJ-Fy-Gqj"/>
                             <constraint firstItem="GHq-K9-iaM" firstAttribute="leading" secondItem="QqB-Bo-xA4" secondAttribute="leading" id="ijf-Tf-xbM"/>
@@ -115,6 +129,7 @@
                         <outlet property="image" destination="cJC-tR-Frg" id="YCe-0A-CmY"/>
                         <outlet property="openPalette" destination="QqB-Bo-xA4" id="Sgv-5l-LhW"/>
                         <outlet property="openTimer" destination="GHq-K9-iaM" id="C1z-pj-fFq"/>
+                        <outlet property="reset" destination="1wW-EN-tqb" id="UcD-fP-Q9t"/>
                         <outlet property="share" destination="Wts-fj-lR7" id="v4m-gD-rA3"/>
                     </connections>
                 </viewController>

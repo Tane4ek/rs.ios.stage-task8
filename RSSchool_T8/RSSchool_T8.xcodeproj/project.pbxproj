@@ -16,8 +16,8 @@
 		6277B9C926A18A3B00AF7732 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6277B9C826A18A3B00AF7732 /* main.m */; };
 		6277B9DB26A2A13900AF7732 /* SubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6277B9DA26A2A13900AF7732 /* SubView.m */; };
 		6277B9DE26A36D9B00AF7732 /* DrawingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6277B9DD26A36D9B00AF7732 /* DrawingsViewController.m */; };
-		628BD53A26A4427B008DD0BF /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 628BD53826A4427B008DD0BF /* Montserrat-Regular.ttf */; };
-		628BD53B26A4427B008DD0BF /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 628BD53926A4427B008DD0BF /* Montserrat-Medium.ttf */; };
+		628BD56326A6118D008DD0BF /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 628BD56126A6118D008DD0BF /* Montserrat-Medium.ttf */; };
+		628BD56426A6118D008DD0BF /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 628BD56226A6118D008DD0BF /* Montserrat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,8 @@
 		6277B9DA26A2A13900AF7732 /* SubView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubView.m; sourceTree = "<group>"; };
 		6277B9DC26A36D9B00AF7732 /* DrawingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingsViewController.h; sourceTree = "<group>"; };
 		6277B9DD26A36D9B00AF7732 /* DrawingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingsViewController.m; sourceTree = "<group>"; };
-		628BD53826A4427B008DD0BF /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "RSSchool_T8_Fonts/Montserrat-Regular.ttf"; sourceTree = SOURCE_ROOT; };
-		628BD53926A4427B008DD0BF /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "RSSchool_T8_Fonts/Montserrat-Medium.ttf"; sourceTree = SOURCE_ROOT; };
+		628BD56126A6118D008DD0BF /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "RSSchool_T8_Fonts/Montserrat-Medium.ttf"; sourceTree = SOURCE_ROOT; };
+		628BD56226A6118D008DD0BF /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "RSSchool_T8_Fonts/Montserrat-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,14 +79,14 @@
 				6277B9BD26A18A3B00AF7732 /* ViewController.m */,
 				6277B9D926A2A13900AF7732 /* SubView.h */,
 				6277B9DA26A2A13900AF7732 /* SubView.m */,
+				6277B9DC26A36D9B00AF7732 /* DrawingsViewController.h */,
+				6277B9DD26A36D9B00AF7732 /* DrawingsViewController.m */,
 				6277B9BF26A18A3B00AF7732 /* Main.storyboard */,
 				6277B9C226A18A3B00AF7732 /* Assets.xcassets */,
 				6277B9E326A37DFF00AF7732 /* Fonts */,
 				6277B9C426A18A3B00AF7732 /* LaunchScreen.storyboard */,
 				6277B9C726A18A3B00AF7732 /* Info.plist */,
 				6277B9C826A18A3B00AF7732 /* main.m */,
-				6277B9DC26A36D9B00AF7732 /* DrawingsViewController.h */,
-				6277B9DD26A36D9B00AF7732 /* DrawingsViewController.m */,
 			);
 			path = RSSchool_T8;
 			sourceTree = "<group>";
@@ -94,8 +94,8 @@
 		6277B9E326A37DFF00AF7732 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				628BD53926A4427B008DD0BF /* Montserrat-Medium.ttf */,
-				628BD53826A4427B008DD0BF /* Montserrat-Regular.ttf */,
+				628BD56126A6118D008DD0BF /* Montserrat-Medium.ttf */,
+				628BD56226A6118D008DD0BF /* Montserrat-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -156,10 +156,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				628BD53A26A4427B008DD0BF /* Montserrat-Regular.ttf in Resources */,
-				628BD53B26A4427B008DD0BF /* Montserrat-Medium.ttf in Resources */,
 				6277B9C626A18A3B00AF7732 /* LaunchScreen.storyboard in Resources */,
 				6277B9C326A18A3B00AF7732 /* Assets.xcassets in Resources */,
+				628BD56326A6118D008DD0BF /* Montserrat-Medium.ttf in Resources */,
+				628BD56426A6118D008DD0BF /* Montserrat-Regular.ttf in Resources */,
 				6277B9C126A18A3B00AF7732 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
