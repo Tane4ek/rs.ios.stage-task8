@@ -201,8 +201,8 @@
     
     UILabel *labelMin = [[UILabel alloc] initWithFrame:CGRectMake(30, 102, 255, 20)];
     UILabel *labelMax = [[UILabel alloc] initWithFrame:CGRectMake(320, 102, 255, 20)];
-    labelMin.text = @"1.0";
-    labelMax.text = @"5.0";
+    labelMin.text = @"1";
+    labelMax.text = @"5";
     [self.timerView addSubview:labelMin];
     [self.timerView addSubview:labelMax];
     
@@ -262,7 +262,7 @@
 }
 
 - (IBAction)onSlider:(id)sender {
-    self.labelCurrent.text = [NSString stringWithFormat:@"%.2f", self.timerSlider.value];
+    self.labelCurrent.text = [NSString stringWithFormat:@"%.2f s", self.timerSlider.value];
 }
 
 - (IBAction)onDraw:(id)sender {
