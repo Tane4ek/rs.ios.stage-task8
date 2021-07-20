@@ -14,8 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *treeButton;
 @property (weak, nonatomic) IBOutlet UIButton *landScapeButton;
 
+@property UIColor *textBottomColor;
 
-//@property (weak, nonatomic) IBOutlet UIButton *planetButton;
 
 @end
 
@@ -25,8 +25,10 @@
     [super viewDidLoad];
     NSLog(@"FFFFF");
     
-//    setup buttons
+//    setupColors
+    self.textBottomColor = [UIColor colorWithRed:33.0/255 green:176.0/255 blue:142.0/255 alpha:1];
     
+//    setup buttons
     self.planetButton.layer.cornerRadius = 10;
     self.planetButton.layer.backgroundColor = UIColor.whiteColor.CGColor;
     self.planetButton.layer.shadowColor = UIColor.blackColor.CGColor;
@@ -56,6 +58,7 @@
     self.landScapeButton.layer.shadowOpacity = 0.25;
     
 }
+
 
 - (IBAction)onPlanet:(id)sender {
     [NSUserDefaults.standardUserDefaults setInteger:1 forKey:@"Drawing"];

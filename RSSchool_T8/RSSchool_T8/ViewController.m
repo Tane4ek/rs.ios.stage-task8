@@ -226,12 +226,24 @@
                               action:@selector(resetTapped:)
                               forControlEvents:UIControlEventTouchUpInside];
     
+    [self.draw addTarget:self action:@selector(drawTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.draw addTarget:self action:@selector(buttonTouch:) forControlEvents:UIControlEventTouchDown];
+    
+}
+
+-(void)buttonTouch:(UIButton *)sender {
+    sender.layer.shadowColor = self.textBottomColor.CGColor;
+}
+
+-(void)drawTapped: (UIButton *)sender {
+    sender.layer.shadowColor = self.black.CGColor;
 }
 
 -(void)resetTapped: (UIButton *)sender {
     self.image.layer.sublayers = nil;
     
     self.draw.hidden = NO;
+    sender.layer.shadowColor = self.black.CGColor;
     self.reset.hidden = YES;
     
     self.openPalette.enabled = YES;
@@ -267,8 +279,8 @@
 
 - (IBAction)onDraw:(id)sender {
     self.image.layer.sublayers = nil;
-
-    NSInteger drawing = 1;
+    
+    NSInteger drawing = 2;
     if ([NSUserDefaults.standardUserDefaults objectForKey:@"Drawing"]) {
         drawing = [NSUserDefaults.standardUserDefaults integerForKey:@"Drawing"];
     }
